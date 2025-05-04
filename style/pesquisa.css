@@ -1,0 +1,11 @@
+  /* Espaçamento da seção de busca/status */
+  #busca-status {
+    background-color: var(--home-btn-bg-hover); /* fundo discreto */
+    color: #d3dbd9;
+  }
+  
+  /* Ícone e input */
+  #barra-pesquisa::placeholder {
+    color: #aaa;
+  }
+  
