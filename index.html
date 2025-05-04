@@ -108,12 +108,7 @@
                 <!-- Container com conteúdo centralizado no meio da tela -->
                 <div class="container position-relative z-2 d-flex flex-column justify-content-center align-items-center text-center text-white h-100 px-3">
             
-                <!-- Aviso de horário no topo do conteúdo -->
-                <div id="status-horario"
-                    class="mb-4 d-inline-flex align-items-center px-3 py-2 rounded bg-dark bg-opacity-75 shadow">
-                    <i id="icone-status" class="bi me-2"></i>
-                    <span id="texto-status">Verificando horário...</span>
-                </div>
+              
             
                 <!-- Avaliação -->
                 <div class="mb-2">
@@ -227,8 +222,38 @@
                 </div>
             </div>
 
+            <!-- Seção: Pesquisa e Horário -->
+<section id="busca-status" class="py-4">
+    <div class="container">
+      <div class="row justify-content-center align-items-center g-3 flex-wrap">
+        
+        <!-- Barra de Pesquisa -->
+        <div class="col-md-6">
+          <!-- Campo de busca com ícone -->
+          <div class="input-group">
+            <span class="input-group-text bg-dark text-white">
+              <i class="bi bi-search"></i>
+            </span>
+            <input type="text" class="form-control" id="barra-pesquisa" placeholder="Buscar no cardápio...">
+          </div>
+        </div>
+  
+        <!-- Status de Horário -->
+        <div class="col-md-auto">
+          <div id="status-horario"
+            class="d-inline-flex align-items-center px-3 py-2 rounded bg-dark bg-opacity-75 shadow">
+            <i id="icone-status" class="bi me-2"></i>
+            <span id="texto-status">Verificando horário...</span>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
 
-          </main>
+
+        </main>
           
 
  

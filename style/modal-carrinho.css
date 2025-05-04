@@ -84,3 +84,112 @@
     transform: translateY(0);
     opacity: 1;
 }
+
+
+/* ============================ */
+/* Modal do Carrinho - Burger Day */
+/* ============================ */
+
+/* Fundo geral do modal */
+.carrinho-modal {
+    background-color: #3b3e37; /* Cor escura elegante do fundo */
+    color: #d3dbd9;            /* Cor clara para o texto */
+    border-radius: 1rem;
+    border: none;
+  }
+  
+  /* Cabeçalho do modal */
+  .carrinho-header {
+    background-color: #281b24;
+    border-bottom: 1px solid #e19563;
+    color: #efac41;
+  }
+  
+  /* Botão de fechar (X) */
+  .carrinho-header .btn-close {
+    filter: brightness(0) invert(1); /* Transforma o ícone em branco */
+  }
+  
+  /* Corpo do modal */
+  .carrinho-body {
+    padding: 1.5rem;
+  }
+  
+  /* Lista de itens */
+  #cart-items .list-group-item {
+    background-color: transparent;
+    border: 1px solid #efac41;
+    color: #ffffff;
+  }
+  
+  /* Total */
+  #cart-total {
+    color: #efac41;
+  }
+  
+  /* Verificação de CEP */
+  #cep-verificacao input {
+    background-color: #d3dbd9;
+    border: none;
+  }
+  
+  #verificar-cep {
+    background-color: #efac41;
+    color: #281b24;
+    border: none;
+    transition: all 0.3s;
+  }
+  
+  #verificar-cep:hover {
+    background-color: #e19563;
+  }
+  
+  /* Formulário de endereço */
+  #endereco-form input,
+  #endereco-form select {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    color: #000;
+  }
+  
+  /* Rodapé */
+  .carrinho-footer {
+    background-color: #281b24;
+    padding: 1.5rem;
+    border-top: 1px solid #e19563;
+  }
+  
+  /* Formulário do rodapé */
+  #cart-form input,
+  #cart-form textarea {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    color: #000;
+  }
+  
+  /* Botão de finalizar pedido */
+  .btn-pedido {
+    background-color: #efac41;
+    color: #281b24;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-pedido:hover {
+    background-color: #e19563;
+  }
+  
+  /* Botão de continuar comprando */
+  .btn-continuar {
+    background-color: transparent;
+    color: #d3dbd9;
+    border: 1px solid #d3dbd9;
+    transition: all 0.3s;
+  }
+  
+  .btn-continuar:hover {
+    background-color: #d3dbd9;
+    color: #281b24;
+  }
+  
