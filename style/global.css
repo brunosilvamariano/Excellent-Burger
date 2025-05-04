@@ -1,0 +1,97 @@
+:root {
+    --font-titulo: 'Poppins', sans-serif;
+    --font-texto: 'Mukta Malar', sans-serif;
+  }
+  
+  h1, h2, h3, .titulo, .botao {
+    font-family: var(--font-titulo);
+  }
+  
+
+  :root {
+    /* === PALETA MODERNA E SUAVE PARA HAMBURGUERIA === */
+    --cor-creme-suave:        #fdfaf6;  /* Fundo principal claro */
+    --cor-marrom-suave:       #8b6d5c;  /* Título / header moderno */
+    --cor-dourado-claro:      #fda623;  /* Destaques e botões */
+    --cor-salmão-claro:       #f2a588;  /* Acentos leves e botões hover */
+    --cor-verde-menta:        #aedfc1;  /* Ícones e links ativos */
+    --cor-grafite:            #2f2f2f;  /* Texto escuro elegante */
+    --cor-cinza-suave:        #e7e7e7;  /* Bordas, divisores */
+    --cor-branco-puro:        #ffffff;  /* Cartões e fundo de modal */
+
+    /* === PALETA HEADER === */
+    --header-text-a: #e7e7e7;
+    --header-home-hover:    #aedfc1; 
+    --header-bg-grafite:            #2f2f2f;  
+    --header-bg-cat:            #aedfc1;  
+    --header-bg-cat-hover:            #2f2f2f;  
+
+    --header-bg-car:            #aedfc1;
+    --header-text-car:            #2f2f2f;    
+
+    --canvas-bg-grafite:            #2f2f2f;
+
+    --home-bg-left:           #aedfc1;
+    --home-text-cor:           #aedfc1;
+    --home-btn-bg:           #fdfaf6;
+    --home-border-bg:           #aedfc1;
+    --home-btn-text-cor:           #fdfaf6;
+    --home-btn-text-hover:           #fdfaf6;
+    --home-btn-bg-hover:           #2f2f2f;
+       
+    /* === FONTES GERAIS === */
+    --fonte-titulo:           'Poppins', sans-serif;
+    --fonte-texto:            'Mukta Malar', sans-serif;
+  
+    /* === HEADER === */
+    --header-bg:              var(--header-bg-grafite);
+    --header-logo-size:       150px;
+    
+  
+    /* === TOGGLE / MENU === */
+  
+    /* === MENU OFFCANVAS === */
+ 
+
+
+  
+    /* === MODAL / CARRINHO === */
+    --modal-bg:               var(--cor-branco-puro);
+    --modal-text:             var(--cor-grafite);
+    --modal-header-bg:        var(--cor-dourado-claro);
+    --modal-footer-bg:        var(--cor-marrom-suave);
+    --modal-borda:            var(--cor-cinza-suave);
+
+     /* === MODAL / SOBRE === */
+     --about-bg:               var(--cor-grafite);
+     --about-text:             var(--cor-branco-puroe);
+     --about-header-bg:        var(--cor-dourado-claro);
+     --about-footer-bg:        var(--cor-marrom-suave);
+     --about-borda:            var(--cor-cinza-suave);
+   
+  
+    /* === HOME / HERO === */
+    --home-bg:                var(--cor-creme-suave);
+    --home-text:              var(--cor-marrom-suave);
+    --home-highlight:         var(--cor-verde-menta);
+  
+    /* === BOTÕES === */
+    --btn-primario-bg:        var(--cor-dourado-claro);
+    --btn-primario-text:      var(--cor-grafite);
+    --btn-secundario-bg:      transparent;
+    --btn-secundario-border:  var(--cor-salmão-claro);
+    --btn-hover-bg:           var(--cor-salmão-claro);
+    --btn-hover-text:         var(--cor-branco-puro);
+  
+    /* === CARDS DE PRODUTOS === */
+    --card-bg:                var(--cor-branco-puro);
+    --card-text:              var(--cor-grafite);
+    --card-borda:             var(--cor-cinza-suave);
+    --card-destaque:          var(--cor-dourado-claro);
+    --card-hover-bg:          var(--cor-creme-suave);
+  
+    /* === RODAPÉ === */
+    --footer-bg:              var(--cor-marrom-suave);
+    --footer-text:            var(--cor-branco-puro);
+  }
+  

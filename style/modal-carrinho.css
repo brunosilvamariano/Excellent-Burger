@@ -1,0 +1,86 @@
+/* ============================== */
+/* Estilização dos Modais        */
+/* ============================== */
+
+/* Fundo estilizado para modais */
+.bg-modal {
+    background-color: #3b3e37; /* tom escuro suave */
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+/* Cor de destaque no título */
+.text-highlight {
+    color: #efac41;
+}
+
+/* Carrossel arredondado */
+.carousel-inner {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    overflow: hidden;
+}
+
+/* Imagens do carrossel com animação suave */
+.carousel-item img {
+    transition: transform 0.5s ease-in-out;
+}
+.carousel-item img:hover {
+    transform: scale(1.02);
+}
+
+/* Links claros dentro dos modais */
+.bg-modal a {
+    text-decoration: underline;
+}
+
+/* Cor do botão de fechar */
+.btn-close-white {
+    filter: invert(1);
+}
+
+/* ============================== */
+/* Estilização do Modal Sobre    */
+/* ============================== */
+
+/* Estilizando o título com mais ênfase */
+.modal-title {
+    font-size: 1.5rem;
+    color: #efac41;
+    font-weight: bold;
+}
+
+/* Espaço e destaque para os ícones e links */
+.modal-body p {
+    margin-bottom: 15px;
+}
+
+.modal-body p strong {
+    color: #efac41;
+}
+
+/* Detalhes da logo (sombra, borda, etc) */
+
+
+/* Espaçamento para um layout limpo */
+.modal-body {
+    padding: 20px;
+}
+
+/* Adicionando um hover nos links de redes sociais */
+.link-light:hover {
+    color: #efac41;
+    text-decoration: underline;
+}
+
+/* ============================== */
+/* Adicionando uma animação no Modal */
+.modal.fade .modal-dialog {
+    transform: translateY(-30px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.modal.fade.show .modal-dialog {
+    transform: translateY(0);
+    opacity: 1;
+}

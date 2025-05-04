@@ -1,0 +1,50 @@
+/* ======================= */
+/* Seção HOME (Tela Cheia) */
+/* ======================= */
+.home {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    background: var(--home-bg-left);
+  }
+  
+  .home h1 {
+    font-size: 3rem;
+    color: var(--home-text-cor);
+  }
+  
+  .home p.lead {
+    font-size: 1.25rem;
+    color: var(--home-text-cor);
+    letter-spacing: 1px;
+  }
+  
+  /* Avaliação */
+  .home .fs-4 {
+    color: var(--home-text-cor);
+    font-weight: 600;
+  }
+
+
+  /* =========================== */
+  /* Botões personalizados home */
+  /* =========================== */
+  .home .btn {
+    color: var(--home-text-cor);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--home-border-bg);
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .home .btn:hover {
+    background-color: var(--home-btn-bg-hover);
+    color: var(--home-btn-text-hover);
+    border: 1px solid var(--home-btn-bg-hover);
+  }
+  
+  
