@@ -1,20 +1,22 @@
+document.addEventListener('DOMContentLoaded', function () {
+  const botoes = document.querySelectorAll('.categoria-link');
+  const secoes = document.querySelectorAll('.categoria-produto');
 
-  // Ao clicar em uma categoria
-  document.querySelectorAll('.categoria-card').forEach(card => {
-    card.addEventListener('click', function () {
-      const categoriaSelecionada = this.dataset.categoria;
+  botoes.forEach(botao => {
+    botao.addEventListener('click', function (e) {
+      e.preventDefault();
+      const categoria = this.dataset.categoria;
 
-      // Oculta todas as seções de produtos
-      document.querySelectorAll('.secao-produtos').forEach(secao => {
-        secao.classList.add('d-none');
+      // Exibe apenas a categoria selecionada e oculta as outras
+      secoes.forEach(secao => {
+        secao.style.display = secao.dataset.categoria === categoria ? 'block' : 'none';
       });
-
-      // Mostra a seção correspondente
-      const secaoSelecionada = document.getElementById(`produtos-${categoriaSelecionada}`);
-      if (secaoSelecionada) {
-        secaoSelecionada.classList.remove('d-none');
-        secaoSelecionada.scrollIntoView({ behavior: 'smooth' });
-      }
     });
   });
 
+  // Exibe a primeira categoria por padrão
+  if (secoes.length) {
+    secoes.forEach(secao => secao.style.display = 'none');
+    secoes[0].style.display = 'block';
+  }
+});
