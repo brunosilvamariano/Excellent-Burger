@@ -1,36 +1,24 @@
- /* === HEADER === */
- header {
-  background: var(--header-bg-grafite);
-  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.827);
+/* === HEADER === */
+header {
+  background: var(--header-bg); /* Fundo do header */
+  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.827);
   position: sticky;
   top: 0;
   z-index: 1050;
 }
 
+/* Botões no Header */
 header .btn {
   font-size: 1rem;
   padding: 5px;
 }
 
-.cart-count {
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  background-color: var(--header-bg-car);
-  color: var(--header-text-car);
-  font-size: 0.75rem;
-  padding: 2px 6px;
-  border-radius: 50%;
-  font-weight: bold;
-}
-
 /* === OFFCANVAS MENU === */
 .offcanvas {
-  background-color: var(--cor-grafite);
+  background-color: var(--menu-bg);
 }
 
 .offcanvas-header {
-  border-bottom: 1px solid var(--offcanvas-borda);
   padding-bottom: 1rem;
 }
 
@@ -40,64 +28,53 @@ header .btn {
   text-decoration: none;
 }
 
-.modal.fade .modal-dialog {
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
 .offcanvas.fade {
   transition: transform 0.4s ease;
 }
 
-
-
-.home-hover{
-  color: var(--header-text-a);
+/* === LINKS HOME E CATEGORIAS === */
+.home-hover {
+  color: var(--header-texto);
   text-decoration: none;
 }
 
-.home-hover:hover{
-  background: var(--header-home-hover);
-  color: var(--header-bg-grafite);
+.home-hover:hover {
+  background: var(--header-link-hover);
+  color: var(--header-bg);
   font-family: var(--fonte-titulo);
   transition: background-color 0.3s ease, padding-left 0.2s ease;
   text-decoration: none;
   padding-left: 1.5rem;
 }
 
-.cat-hover:hover{
-  background: var(--header-home-hover);
-  color: var(--header-bg-grafite);
+.cat-hover {
+  color: var(--header-texto);
+  text-decoration: none;
+}
+
+.cat-hover:hover {
+  background: var(--header-link-hover);
+  color: var(--header-bg);
   font-family: var(--fonte-titulo);
   transition: background-color 0.3s ease, padding-left 0.2s ease;
   text-decoration: none;
   padding-left: 1.5rem;
 }
 
-
-.cat-hover{
-  color: var(--header-text-a);
-  text-decoration: none;
-}
-
-/* Dropdown personalizado */
+/* === DROPDOWN PERSONALIZADO === */
 .dropdown-menu {
-  background-color: var(--header-bg-cat);
+  background-color: var(--header-bg-categorias);
   border: none;
 }
 
 .dropdown-item {
-  color: var(--offcanvas-text);
+  color: var(--offcanvas-texto);
   font-family: var(--fonte-texto);
 }
 
 .dropdown-item:hover {
-  background-color: var(--header-bg-cat-hover);
+  background-color: var(--header-bg-categorias-hover);
   color: #fff;
 }
 
 
-.home h1,
-.home p,
-.home button,
-#status-horario {
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
-}

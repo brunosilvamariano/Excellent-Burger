@@ -5,8 +5,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="Cardápio online da hamburgueria Burger Day – Peça combos, burgers, porções e mais com facilidade.">
-        <meta name="author" content="Burger Day">
+        <meta name="description" content="Cardápio online da HB Developers – Peça combos, burgers, porções e mais com facilidade.">
+        <meta name="author" content="HB Developers">
         <meta name="theme-color" content="#3b3e37">
 
         <!-- Pré-conexão para Google Fonts -->
@@ -14,7 +14,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
         <!-- Título da página -->
-        <title>Excellent Burger | Cardápio Online</title>
+        <title>HB Developers | Cardápio Online</title>
 
         <!-- Favicon -->
         <link rel="icon" href="assets/img/logo-temp.png" type="image/png">
@@ -26,6 +26,7 @@
 
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        
 
         <!-- Bootstrap Icons -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
@@ -35,508 +36,457 @@
         
         <!-- Comentário: Adicione aqui outros estilos extras se necessário -->
       
+      
     </head>
       
     <body>
-     
-        <!-- Header Principal -->
-        <header id="header-principal">
+      <!-- 
+        Cabeçalho Principal do Site
+        - Contém a logomarca da empresa e o botão para abrir o menu lateral (offcanvas).
+        - Utiliza estrutura semântica e acessível.
+        -->
+        <header id="header-principal" class="shadow-sm">
             <div class="container d-flex justify-content-between align-items-center py-3">
-                <!-- Logo -->
-                <div class="logo" id="logo-header">
-                    <a href="#home" aria-label="Voltar para a página inicial">
-                        <img src="./assets/img/logo/logo-menu.svg" alt="Logo Burger Day" class="img-fluid" id="logo-imagem" style="width: 150px;">
+                
+                <!-- 
+                    Logomarca da Empresa:
+                    - Envolvida por um link que retorna à seção inicial da página.
+                    - Imagem responsiva com descrição acessível.
+                -->
+                <div id="logo-header">
+                    <a href="#home" aria-label="Voltar para a seção inicial da página">
+                        <img 
+                            src="assets/img/logo/logo.svg" 
+                            alt="Logotipo da HB Developers" 
+                            class="img-fluid" 
+                            id="logo-imagem" 
+                            width="150"
+                        >
                     </a>
                 </div>
 
-                <!-- Ícones de Menu e Carrinho -->
-                <div class="d-flex align-items-center" id="icones-menu-carrinho">
-                    <!-- Botão Menu -->
-                    <button class="btn me-3" id="menu-toggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu" aria-label="Abrir menu de navegação">
-                        <img src="assets/img/icons/toggle-menu.svg" alt="Menu" class="icone-menu" style="width: 50px; height: 40px;">
+                <!-- 
+                    Área de Interação:
+                    - Contém botão para abrir o menu lateral (offcanvas).
+                    - Ícone do tipo "hambúrguer" representando o menu.
+                -->
+                <nav aria-label="Menu de navegação principal">
+                    <button 
+                        class="btn me-3" 
+                        id="menu-toggle" 
+                        data-bs-toggle="offcanvas" 
+                        data-bs-target="#offcanvasMenu" 
+                        aria-controls="offcanvasMenu" 
+                        aria-label="Abrir menu de navegação"
+                    >
+                        <img 
+                            src="assets/img/icons/toggle-menu.svg" 
+                            alt="Ícone do menu" 
+                            class="icone-menu" 
+                            width="50" 
+                            height="40"
+                        >
                     </button>
+                </nav>
 
-                    <!-- Botão Carrinho -->
-                    <button class="btn position-relative" id="botao-carrinho" data-bs-toggle="modal" data-bs-target="#cartModal">
-                        <img src="assets/img/icons/car-menu.svg" alt="Carrinho" class="icone-carrinho" style="width: 34px; height: 34px;">
-                        <span class="cart-count" id="contador-carrinho">0</span>
-                    </button>
-                </div>
             </div>
         </header>
-        <!-- Menu Offcanvas (para telas menores) -->
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
-            <div class="offcanvas-header">
-                <div class="img-fluid py-4" style="width: 150px;"></div>>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
-            </div>
-            <div class="offcanvas-body">
+       <!-- 
+            Menu Offcanvas (Menu Lateral de Navegação):
+            - Utilizado principalmente em dispositivos móveis.
+            - Contém links de navegação para as seções do site.
+            - Estrutura acessível e semanticamente organizada.
+        -->
+        <aside 
+        class="offcanvas offcanvas-start" 
+        tabindex="-1" 
+        id="offcanvasMenu" 
+        aria-labelledby="offcanvasMenuLabel"
+        role="navigation"
+        >
+        <!-- 
+            Cabeçalho do Menu Offcanvas:
+            - Contém espaço reservado para logotipo ou imagem.
+            - Inclui botão de fechar o menu com acessibilidade.
+        -->
+        <div class="offcanvas-header">
+            <!-- Espaço reservado para o logo ou elemento gráfico -->
+            <div class="img-fluid py-4" style="width: 150px;"></div>
+
+            <!-- Botão de Fechar o Menu (acessível) -->
+            <button 
+                type="button" 
+                class="btn-close" 
+                data-bs-dismiss="offcanvas" 
+                aria-label="Fechar menu"
+            ></button>
+        </div>
+
+        <!-- 
+            Corpo do Menu Offcanvas:
+            - Navegação principal do site.
+            - Lista de links e submenu com categorias.
+        -->
+        <div class="offcanvas-body">
+            <nav aria-label="Navegação principal do site">
                 <ul class="list-unstyled">
-                    <!-- Home -->
+
+                    <!-- Link para a seção Home -->
                     <li>
-                        <a href="#home" class="d-flex align-items-center py-2 px-3 rounded-3 home-hover">
-                            <i class="bi bi-house-door me-2"></i> Home
+                        <a 
+                            href="#home" 
+                            class="d-flex align-items-center py-2 px-3 rounded-3 home-hover"
+                            aria-label="Ir para a seção inicial (Home)"
+                        >
+                            <i class="bi bi-house-door me-2" aria-hidden="true"></i>
+                            <span>Home</span>
                         </a>
                     </li>
 
-                    <!-- Dropdown para Categorias -->
+                    <!-- Link com submenu: Menu de Categorias -->
                     <li>
-                        <a href="javascript:void(0)" class="dropdown-toggle d-flex align-items-center py-2 rounded-3 cat-hover" id="dropdownCategories" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-list me-2"></i> Categorias
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#combos" class="dropdown-item">Combos</a></li>
-                            <li><a href="#burgers" class="dropdown-item">Burgers</a></li>
-                            <li><a href="#porcoes" class="dropdown-item">Porções</a></li>
-                            <li><a href="#sobremesas" class="dropdown-item">Sobremesas</a></li>
-                            <li><a href="#bebidas" class="dropdown-item">Bebidas</a></li>
-                            <li><a href="#promocoes" class="dropdown-item">Promoções</a></li>
-                        </ul>
+                        <div class="dropdown">
+                            <a 
+                                href="#" 
+                                class="dropdown-toggle d-flex align-items-center py-2 px-3 rounded-3 cat-hover" 
+                                id="dropdownCategories" 
+                                data-bs-toggle="dropdown" 
+                                aria-expanded="false"
+                                aria-label="Abrir menu de categorias"
+                            >
+                                <i class="bi bi-list me-2" aria-hidden="true"></i>
+                                <span>Menu</span>
+                            </a>
+
+                            <!-- Lista de Subcategorias (dropdown) -->
+                            <ul class="dropdown-menu" aria-labelledby="dropdownCategories">
+                                <li><a href="#sobre" class="dropdown-item">Sobre</a></li>
+                                <li><a href="#projetos" class="dropdown-item">Projetos</a></li>
+                                <li><a href="#servicos" class="dropdown-item">Serviços</a></li>
+                                <li><a href="#blog" class="dropdown-item">Blog</a></li>
+                                <li><a href="#contato" class="dropdown-item">Contato</a></li>
+                                <li><a href="#testemunhos" class="dropdown-item">Testemunhos</a></li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
-            </div>
+            </nav>
         </div>
-        
-        <main>
-            <!-- Seção Home com conteúdo centralizado sobre a imagem de fundo -->
-            <section class="home position-relative text-white" style="max-height: 88vh;">
+        </aside>
 
-                <!-- Imagem de fundo ocupando toda a seção -->
-                <img src="assets/img/banner/home1.png" alt="Banner da hamburgueria"
-                    class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" style="z-index: 1;">
-            
-                <!-- Container com conteúdo centralizado no meio da tela -->
-                <div class="container position-relative z-2 d-flex flex-column justify-content-center align-items-center text-center text-white h-100 px-3">
-            
-                <!-- Avaliação -->
-                <div class="mb-2">
-                    <span class="fs-4">⭐️⭐️⭐️⭐️⭐️ 9.3</span>
-                    <p class="mb-0">Excelente – 412 Avaliações</p>
-                </div>
-
-                <!-- Status de Horário -->
-                <div class="col-md-auto">
-                    <div id="status-horario"
-                    class="d-inline-flex align-items-center px-3 py-2 rounded bg-dark bg-opacity-75 shadow">
-                    <i id="icone-status" class="bi me-2"></i>
-                    <span id="texto-status">Verificando horário...</span>
+        <main class="home">
+            <!-- Seção Hero estilizada com fundo de imagem e botões personalizados -->
+            <section class="hero-home d-flex align-items-center justify-content-center text-center">
+                <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                    <!-- Título principal com efeito de digitação -->
+                    <h1 class="hero-txt display-4 fw-bold mb-4">
+                        Somos a <span id="typewriter" class="marca"></span>
+                    </h1>
+                    
+                    <!-- Descrição -->
+                    <p class="hero-p lead mb-4">
+                        Desenvolvemos experiências digitais modernas e funcionais com foco em resultados.
+                    </p>
+                    
+                    <!-- Botões personalizados com ícones -->
+                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                        <a href="#projetos" class="btn-custom btn-primary-custom">
+                        <i class="bi bi-box-arrow-up-right me-2"></i> Ver Projetos
+                        </a>
+                        <a href="#sobre" class="btn-custom btn-outline-custom">
+                        <i class="bi bi-person-circle me-2"></i> Quem Somos
+                        </a>
+                    </div>
                     </div>
                 </div>
-            
-                <!-- Título e subtítulo -->
-                <h1 class="display-4 fw-bold">Excellent Burger</h1>
-                <p class="lead">Hamburgueria artesanal com sabor inesquecível!</p>
-            
-                <!-- Botões centralizados -->
-                <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
-                    <button class="btn" data-bs-toggle="modal" data-bs-target="#modalFotos">Ver Fotos</button>
-                    <button class="btn" data-bs-toggle="modal" data-bs-target="#modalSobre">Sobre</button>
                 </div>
-            
-                </div>
-            </section>    
-                  
-            <!-- Seção: Pesquisa e Horário -->
-            <section id="busca-status" class="py-4">
+            </section>
+            <!-- Seção de frases rotativas com ícones e animação deslizante -->
+            <section class="frases-slide py-4">
                 <div class="container">
-                    <div class="row justify-content-center align-items-center text-center g-4">
-                        <!-- Barra de Pesquisa -->
-                        <div class="input-group">
-                            <div class="col-12 col-md-3">
-                                <img src="assets/img/logo/logo-menu.svg" alt="Status de funcionamento"
-                                    class="img-fluid mx-auto d-block rounded shadow">
+                <div class="frase-wrapper d-flex justify-content-center align-items-center overflow-hidden">
+                    <i id="icone-frase" class="bi bi-lightbulb-fill me-3 fs-4"></i>
+                    <span id="frase-slide" class="fs-5 fw-semibold frase-texto"></span>
+                </div>
+                </div>
+            </section>
+            <!-- Seção de Serviços -->
+            <section class="servicos py-5">
+                <div class="container">
+                <div class="row justify-content-center g-4">
+                    
+                    <!-- Serviço 1 -->
+                    <div class="col-md-6 col-lg-4">
+                    <div class="servico-box text-center p-4">
+                        <i class="bi bi-code-slash icon-servico mb-3"></i>
+                        <h3 class="fs-5 mb-2">Desenvolvimento Web</h3>
+                        <p class="mb-0">Sites modernos, rápidos e responsivos com as melhores práticas.</p>
+                    </div>
+                    </div>
+            
+                    <!-- Serviço 2 -->
+                    <div class="col-md-6 col-lg-4">
+                    <div class="servico-box text-center p-4">
+                        <i class="bi bi-phone icon-servico mb-3"></i>
+                        <h3 class="fs-5 mb-2">Design Responsivo</h3>
+                        <p class="mb-0">Interfaces que se adaptam perfeitamente a qualquer dispositivo.</p>
+                    </div>
+                    </div>
+            
+                    <!-- Serviço 3 -->
+                    <div class="col-md-6 col-lg-4">
+                    <div class="servico-box text-center p-4">
+                        <i class="bi bi-cloud-check icon-servico mb-3"></i>
+                        <h3 class="fs-5 mb-2">Integrações & APIs</h3>
+                        <p class="mb-0">Conectamos seu sistema a APIs externas e plataformas digitais.</p>
+                    </div>
+                    </div>
+            
+                </div>
+                </div>
+            </section>
+            <!-- Seção Portfólio -->
+            <section class="portfolio py-5">
+                <div class="container">
+                    <!-- Título e Subtítulo -->
+                    <div class="text-center mb-5">
+                        <h2 class="section-title">Projetos</h2>
+                        <p class="section-subtitle">Projetos desenvolvidos com foco em design, performance e experiência.</p>
+                    </div>
+                
+                    <div class="row g-4">
+                
+                        <!-- Projeto 1 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="projeto-card">
+                                <img src="assets/img/produtos/breve.png" alt="Projeto 1" class="img-fluid">
+                                <div class="overlay">
+                                    <h4>Projeto Institucional</h4>
+                                    <p>Site moderno com foco em SEO e performance.</p>
+                                    <a href="#" class="btn-portfolio">Ver Projeto</a>
                                 </div>
-                            <button class="btn btn-dark text-white" id="btn-pesquisar">
-                                <i class="bi bi-search"></i>
-                            </button>
-                            <input type="search" class="form-control" id="barra-pesquisa" placeholder="Buscar no cardápio...">
+                            </div>
+                        </div>
+                
+                        <!-- Projeto 2 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="projeto-card">
+                                <img src="assets/img/produtos/breve.png" alt="Projeto 2" class="img-fluid">
+                                <div class="overlay">
+                                    <h4>Loja Virtual</h4>
+                                    <p>E-commerce com carrinho inteligente e integração com API.</p>
+                                    <a href="#" class="btn-portfolio">Ver Projeto</a>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Projeto 3 -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="projeto-card">
+                                <img src="assets/img/produtos/breve.png" alt="Projeto 3" class="img-fluid">
+                                <div class="overlay">
+                                    <h4>Dashboard Admin</h4>
+                                    <p>Painel com gráficos interativos e gerenciamento dinâmico.</p>
+                                    <a href="#" class="btn-portfolio">Ver Projeto</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-            
-            <!-- Seção de Categorias -->
-            <section class="py-5 d-flex justify-content-center align-items-center " id="categorias">
+            <!-- Seção "Quem Somos" -->
+            <section id="quem-somos" class="quem-somos py-5">
                 <div class="container">
-                    <h2 class="text-center fw-bold mb-4">Categorias</h2>
             
-                    <!-- Carrossel horizontal com rolagem centralizada verticalmente -->
-                    <div class="d-flex overflow-auto gap-3 px-2 align-items-center mx-auto" style="scroll-snap-type: x mandatory; min-height: 200px;">
-                    
-                        <!-- Categoria Combo -->
-                        <a href="#produtos-combo" class="text-decoration-none text-dark flex-shrink-0 d-flex flex-column align-items-center justify-content-center" style="scroll-snap-align: start; width: 140px;">
-                            <div class="card border-0 shadow-sm">
-                                <img src="assets/img/produtos/burger.png" class="card-img-top rounded-top" alt="Combo">
-                                <div class="card-body text-center">
-                                    <h6 class="fw-bold mb-0">Combos</h6>
+                    <!-- Título -->
+                    <div class="text-center mb-5">
+                        <h2 class="titulo-secao">Quem Somos</h2>
+                        <p class="subtitulo-secao">
+                        Conheça os desenvolvedores por trás da <strong class="destaque">HB Developers</strong>.
+                        </p>
+                    </div>
+            
+                    <!-- Cards clicáveis -->
+                    <div class="row justify-content-center g-4">
+                        <!-- Card Bruno -->
+                        <div class="col-md-5">
+                            <div class="card perfil-card" data-bs-toggle="collapse" data-bs-target="#perfilBruno">
+                                <div class="d-flex align-items-center p-3">
+                                    <img src="assets/img/logo/bruno.jpg" class="perfil-foto me-3" alt="Foto de Bruno">
+                                    <div>
+                                        <h5 class="mb-0">Bruno Silva</h5>
+                                        <small class="text">Frontend | DevOps</small>
+                                    </div>
+                                </div>
+                                <div id="perfilBruno" class="collapse">
+                                    <hr class="my-2">
+                                    <div class="px-3 pb-3">
+                                        <!-- Formação -->
+                                        <p class="mb-1">
+                                            <i class="bi bi-mortarboard-fill me-2 icone-about"></i>
+                                            <strong>Formado em Desenvolvimento de Sistemas</strong>
+                                        </p>
+                                
+                                        <!-- Experiência -->
+                                        <p class="mb-1">
+                                            <i class="bi bi-briefcase-fill me-2 icone-about"></i>
+                                            <strong>Front-end Specialist com ênfase em UI/UX</strong>
+                                        </p>
+                                    
+                                        <!-- Descrição profissional -->
+                                        <p>
+                                            Atua há mais de 4 anos desenvolvendo interfaces modernas, responsivas e acessíveis. Focado na experiência do usuário, domina tecnologias como React, Vue, Bootstrap e Tailwind. Entrega soluções visuais que equilibram estética e performance.
+                                        </p>
+                                    
+                                        <!-- Redes sociais -->
+                                        <div class="social-icons mt-3">
+                                            <a href="#" aria-label="GitHub de Bruno"><i class="bi bi-github"></i></a>
+                                            <a href="#" aria-label="LinkedIn de Bruno"><i class="bi bi-linkedin"></i></a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </a>
-            
-                        <!-- Categoria Lanches -->
-                        <a href="#produtos-lanches" class="text-decoration-none text-dark flex-shrink-0 d-flex flex-column align-items-center justify-content-center" style="scroll-snap-align: start; width: 140px;">
-                            <div class="card border-0 shadow-sm">
-                                <img src="assets/img/produtos/burger.png" class="card-img-top rounded-top" alt="Lanches">
-                                <div class="card-body text-center">
-                                    <h6 class="fw-bold mb-0">Lanches</h6>
+                        </div>
+                        <!-- Card Henrique -->
+                        <div class="col-md-5">
+                            <div class="card perfil-card" data-bs-toggle="collapse" data-bs-target="#perfilHenrique">
+                                <div class="d-flex align-items-center p-3">
+                                    <img src="assets/img/logo/eu.svg" class="perfil-foto me-3" alt="Foto de Henrique">
+                                    <div>
+                                        <h5 class="mb-0">Henrique Cordeiro</h5>
+                                        <small class="text">Backend | DevOps</small>
+                                    </div>
+                                </div>
+                                <div id="perfilHenrique" class="collapse">
+                                    <hr class="my-2">
+                                    <div class="px-3 pb-3">
+                                        <!-- Formação -->
+                                        <p class="mb-1">
+                                            <i class="bi bi-mortarboard-fill me-2 icone-about"></i>
+                                            <strong>Engenharia de Software</strong>
+                                        </p>
+                                
+                                        <!-- Experiência -->
+                                        <p class="mb-1">
+                                            <i class="bi bi-briefcase-fill me-2 icone-about"></i>
+                                            <strong>Especialista em Back-end, APIs e Cloud Architecture</strong>
+                                        </p>
+                                    
+                                        <!-- Descrição profissional -->
+                                        <p>
+                                            Com mais de 5 anos de experiência, desenvolve soluções robustas em APIs RESTful, microsserviços e infraestrutura escalável. Atua com foco em segurança, automação, integração contínua e desempenho. Experiência sólida com Node.js, Docker, AWS e bancos de dados relacionais e NoSQL.
+                                        </p>
+                                    
+                                        <!-- Redes sociais -->
+                                        <div class="social-icons mt-3">
+                                            <a href="#" aria-label="GitHub de Henrique"><i class="bi bi-github"></i></a>
+                                            <a href="#" aria-label="LinkedIn de Henrique"><i class="bi bi-linkedin"></i></a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </a>
-            
-                        <!-- Categoria Porções -->
-                        <a href="#produtos-porcoes" class="text-decoration-none text-dark flex-shrink-0 d-flex flex-column align-items-center justify-content-center" style="scroll-snap-align: start; width: 140px;">
-                            <div class="card border-0 shadow-sm">
-                                <img src="assets/img/produtos/burger.png" class="card-img-top rounded-top" alt="Porções">
-                                <div class="card-body text-center">
-                                    <h6 class="fw-bold mb-0">Porções</h6>
-                                </div>
-                            </div>
-                        </a>
-            
-                        <!-- Categoria Doces -->
-                        <a href="#produtos-doces" class="text-decoration-none text-dark flex-shrink-0 d-flex flex-column align-items-center justify-content-center" style="scroll-snap-align: start; width: 140px;">
-                            <div class="card border-0 shadow-sm">
-                                <img src="assets/img/produtos/burger.png" class="card-img-top rounded-top" alt="Doces">
-                                <div class="card-body text-center">
-                                    <h6 class="fw-bold mb-0">Doces</h6>
-                                </div>
-                            </div>
-                        </a>
-            
-                        <!-- Categoria Bebidas -->
-                        <a href="#produtos-bebidas" class="text-decoration-none text-dark flex-shrink-0 d-flex flex-column align-items-center justify-content-center" style="scroll-snap-align: start; width: 140px;">
-                            <div class="card border-0 shadow-sm">
-                                <img src="assets/img/produtos/burger.png" class="card-img-top rounded-top" alt="Bebidas">
-                                <div class="card-body text-center">
-                                    <h6 class="fw-bold mb-0">Bebidas</h6>
-                                </div>
-                            </div>
-                        </a>
-            
-                </div>
+                        </div>
+                    </div>
                 </div>
             </section>
+            <!-- Início da Seção FAQ - Perguntas Frequentes -->
+            <section id="faq">
+                <div class="container">
+                    <!-- Cabeçalho da seção FAQ -->
+                    <div class="faq-header" data-aos="fade-up">
+                        <h2>Perguntas Frequentes</h2>
+                        <p>Esclareça dúvidas sobre nossa atuação como desenvolvedores.</p>
+                    </div>
+
+                    <!-- Lista de perguntas e respostas -->
+                    <div class="faq-container">
+                        <!-- FAQ 1 -->
+                        <details class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                            <summary>
+                                💻 Que tipo de sites vocês desenvolvem?
+                                <span class="icon">+</span>
+                            </summary>
+                            <p>Trabalhamos com portfólios, landing pages, sites institucionais e sistemas personalizados para empresas de diversos segmentos.</p>
+                        </details>
+
+                        <!-- FAQ 2 -->
+                        <details class="faq-item" data-aos="fade-right" data-aos-delay="200">
+                            <summary>
+                                🛠️ Vocês oferecem suporte após a entrega do projeto?
+                                <span class="icon">+</span>
+                            </summary>
+                            <p>Sim. Oferecemos suporte técnico por um período combinado, além de planos de manutenção sob demanda.</p>
+                        </details>
+
+                        <!-- FAQ 3 -->
+                        <details class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                            <summary>
+                                🌐 Posso hospedar o site com vocês?
+                                <span class="icon">+</span>
+                            </summary>
+                            <p>Podemos auxiliar na escolha da melhor hospedagem, mas não somos responsáveis por eventuais instabilidades da plataforma contratada, que devem ser tratadas diretamente com o provedor.</p>
+                        </details>
+
+                        <!-- FAQ 4 -->
+                        <details class="faq-item" data-aos="fade-right" data-aos-delay="400">
+                            <summary>
+                                📆 Qual o prazo médio para a entrega de um site?
+                                <span class="icon">+</span>
+                            </summary>
+                            <p>O prazo depende da complexidade do projeto. Sites institucionais geralmente levam de 7 a 15 dias úteis.</p>
+                        </details>
+                    </div>
+                </div>
+            </section>
+            <!-- Fim da Seção FAQ -->
+
+
+  
+
             
-  
-  
 
-
-        </main>
           
 
- 
+
+          
+
+            <!-- Botão flutuante do WhatsApp -->
+            <a 
+                href="https://wa.me/5511999999999" 
+                class="whatsapp-fixo" 
+                target="_blank" 
+                aria-label="Fale conosco pelo WhatsApp"
+            >
+                <img 
+                    src="assets/img/banner/banner.svg" 
+                    alt="WhatsApp" 
+                    width="60" 
+                    height="60"
+                >
+            </a>
+
+        </main>
+
+        <!-- Estilo para botão WhatsApp -->
+        <style>
+        .whatsapp-fixo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        </style>
+
+          
 
     </body>
     <!-- Bootstrap JS com Popper.js incluído -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script src="scripts/modal-carrinho.js"></script>
-    <script src="scripts/modal-sobre.js"></script>
-    <script src="scripts/modal-abertofechado.js"></script>
     <script src="scripts/toogle-fecha.js"></script>
-    <script src="scripts/categorias.js"></script>
-    
+    <script src="scripts/hero-digita.js"></script>
+    <script src="scripts/frases-loop.js"></script>
 
-    <!-- Modal do Carrinho Estilizado -->
-    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-scrollable">
-            <div class="modal-content carrinho-modal">
-
-                <!-- Cabeçalho do Modal -->
-                <div class="modal-header carrinho-header">
-                    <h5 class="modal-title">Seu Carrinho</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
-                </div>
-
-                <!-- Corpo do Modal -->
-                <div class="modal-body carrinho-body">
-                    <!-- Lista de Itens do Carrinho -->
-                    <ul class="carrinho-itens" id="cart-items">
-                        <li class="item-vazio">Seu carrinho está vazio.</li>
-                    </ul>
-
-                    <!-- Total -->
-                    <div class="carrinho-total">
-                        <h6>Total:</h6>
-                        <h5 id="cart-total">R$ 0,00</h5>
-                    </div>
-
-                    <!-- Verificação de CEP -->
-                    <div id="cep-verificacao" class="carrinho-cep">
-                        <div class="carrinho-cep-input">
-                            <input type="text" id="cep" class="input-carrinho" placeholder="Digite seu CEP" required>
-                            <div id="cep-message" class="cep-msg"></div>
-                        </div>
-                        <button id="verificar-cep" class="btn-verificar-cep">Verificar área atendida</button>
-                    </div>
-
-                    <!-- Formulário de Endereço -->
-                    <div id="endereco-form" class="endereco-form d-none">
-                        <input type="text" id="rua" class="input-carrinho" placeholder="Rua, número, bairro" required>
-                        <input type="text" id="bairro" class="input-carrinho" placeholder="Bairro" required>
-                        <input type="text" id="referencia" class="input-carrinho" placeholder="Ponto de referência" required>
-                        <input type="text" id="cidade" class="input-carrinho" placeholder="Cidade" required>
-
-                        <label for="forma-pagamento" class="label-carrinho">Forma de pagamento</label>
-                        <select id="forma-pagamento" class="select-carrinho" required>
-                            <option value="">Escolha uma forma de pagamento</option>
-                            <option value="debito">Débito</option>
-                            <option value="credito">Crédito</option>
-                            <option value="dinheiro">Dinheiro</option>
-                            <option value="pix">Pix</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Rodapé com Formulário e Botões -->
-                <div class="modal-footer carrinho-footer">
-                    <form id="cart-form" class="formulario-carrinho">
-                        <input type="text" name="nome" class="input-carrinho" placeholder="Seu nome" required>
-                        <input type="tel" name="telefone" class="input-carrinho" placeholder="Seu WhatsApp" required>
-                        <textarea name="observacoes" rows="2" class="textarea-carrinho" placeholder="Observações (opcional)"></textarea>
-                    </form>
-
-                    <!-- Botões -->
-                    <div class="botoes-carrinho">
-                        <a id="finalizarPedidoBtn" href="#" class="btn-pedido" disabled>
-                            Finalizar Pedido via WhatsApp
-                        </a>
-                        <button class="btn-continuar" data-bs-dismiss="modal">
-                            Continuar comprando
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal com carrossel de fotos  -->
-    <div class="modal fade" id="modalFotos" tabindex="-1" aria-labelledby="modalFotosLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content bg-modal text-modal">
-    
-            <!-- Cabeçalho do modal -->
-            <div class="modal-header border-0">
-            <h5 class="modal-title fw-bold" id="modalFotosLabel">Fotos da <span class="text-highlight">Excellent Burger</span></h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
-            </div>
-    
-            <!-- Corpo do modal com carrossel -->
-            <div class="modal-body p-0">
-            <div id="carouselFotos" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner rounded-bottom">
-                <div class="carousel-item active">
-                    <img src="assets/img/banner-verfotos/carousel1.svg" class="d-block w-100" alt="Foto do ambiente 1">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/img/banner-verfotos/carousel2.svg" class="d-block w-100" alt="Foto do burger 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/img/banner-verfotos/carousel3.svg" class="d-block w-100" alt="Foto do combo 3">
-                </div>
-                </div>
-    
-                <!-- Controles -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselFotos" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselFotos" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Próxima</span>
-                </button>
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
-    
-    <!-- Modal Sobre -->
-    <div class="modal fade" id="modalSobre" tabindex="-1" aria-labelledby="modalSobreLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content bg-modal text-modal">
-    
-            <!-- Cabeçalho do modal -->
-            <div class="modal-header border-0">
-            <h5 class="modal-title fw-bold" id="modalSobreLabel">Sobre a <span class="text-highlight">Excellent Burger</span></h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
-            </div>
-    
-            <!-- Corpo do modal -->
-            <div class="modal-body">
-            <div class="text-center mb-4">
-                <img src="assets/img/logo/logo-menu.svg" alt="Logo da Burger Day" style="width: 120px;" class="rounded-circle">
-            </div>
-    
-            <p><strong>🍔 Sobre a Burger Day</strong><br>
-                A Burger Day é uma hamburgueria artesanal que combina ingredientes frescos, sabor marcante e um ambiente moderno para oferecer a melhor experiência para os amantes de burgers!
-            </p>
-    
-            <p><strong>🌍 Nossa Missão</strong><br>
-                Criar uma experiência única para os clientes, oferecendo pratos frescos, bem preparados e com um ambiente aconchegante, ideal para todas as idades.
-            </p>
-    
-            <p><strong>📱 Redes Sociais e Contato</strong><br>
-                Instagram: <a href="#" class="text-highlight">@burgerday</a><br>
-                Telefone: (00) 00000-0000
-            </p>
-    
-            <p><strong>⏰ Horários de Funcionamento</strong><br>
-                Segunda a Sexta: 17:00 - 23:00<br>
-                Sábado: 16:00 - 00:00<br>
-                Domingo: 18:00 - 23:00
-            </p>
-    
-            <p><strong>💳 Formas de Pagamento</strong><br>
-                ✔️ Dinheiro<br>
-                ✔️ Cartão de Crédito/Débito<br>
-                ✔️ Pix<br>
-                ✔️ Vale Refeição (Alelo, Sodexo, etc)
-            </p>
-    
-            <hr class="border" style="border-color: var(--modals-text-cor);">
-    
-            <p><strong>📍 Localização</strong><br>
-                Rua das Palmeiras, 150 - Joinville, SC - <a href="#" class="text-highlight">Ver no mapa</a>
-            </p>
-    
-            <p><strong>🎉 Eventos Especiais</strong><br>
-                Estamos sempre prontos para criar momentos especiais com você! Fique de olho nas nossas promoções sazonais e eventos temáticos!
-            </p>
-            </div>
-        </div>
-        </div>
-    </div>
-
-
-    <!-- Script para Validação do CEP e Envio via WhatsApp -->
-    <script>
-        document.getElementById('verificar-cep').addEventListener('click', function() {
-            var cep = document.getElementById('cep').value;
-            var message = document.getElementById('cep-message');
-            var enderecoForm = document.getElementById('endereco-form');
-            var finalizarBtn = document.getElementById('finalizarPedidoBtn');
-            
-            // Simulação de verificação de CEP
-            var areaAtendida = verificarAreaAtendida(cep);
-            
-            if (areaAtendida) {
-                message.textContent = "Entregamos na sua região!";
-                message.classList.remove('text-muted');
-                message.classList.add('text-success');
-                enderecoForm.classList.remove('d-none');
-                finalizarBtn.disabled = false;
-            } else {
-                message.textContent = "Infelizmente não atendemos esse CEP.";
-                message.classList.remove('text-muted');
-                message.classList.add('text-danger');
-                enderecoForm.classList.add('d-none');
-                finalizarBtn.disabled = true;
-            }
-        });
-
-    // Função para verificar se o CEP está na lista de áreas atendidas
-    function verificarAreaAtendida(cep) {
-        // Lista de CEPs atendidos (incluindo Boehmerwald - Joinville, Floresta - Joinville, Araquari)
-        var cepsAtendidos = [
-            // Boehmerwald - Joinville
-            '89232110', '89232360', '89232100', '89235000', '89235100', 
-            '89235200', '89235300', '89235310', '89235210', '89235320', 
-            '89235330', '89235350', '89235360', '89235370', '89235380', 
-            '89235400', '89235410', '89235420', '89235430', '89235440',
-            '89235450', '89235460', '89235470', '89235480', '89235490',
-            '89235500', '89235510', '89235520', '89235530', '89235540',
-            '89235550', '89235560', '89235570', '89235580', '89235590',
-            '89235600', '89235610', '89235620', '89235630', '89235640',
-            '89235650', '89235660', '89235670', '89235680', '89235690',
-            '89235700', '89235710', '89235720', '89235730', '89235740',
-            '89235750', '89235760', '89235770', '89235780', '89235790',
-            '89235800', '89235810', '89235820', '89235830', '89235840',
-            '89235850', '89235860', '89235870', '89235880', '89235890',
-            '89235900', '89235910', '89235920', '89235930', '89235940',
-            '89235950', '89235960', '89235970', '89235980', '89235990',
-            '89235010', '89235020', '89235030', '89235040', '89235050',
-            '89235060', '89235070', '89235080', '89235090', '89235110',
-            '89235120', '89235130', '89235140', '89235150', '89235160',
-            '89235170', '89235180', '89235190', '89235210', '89235220',
-            '89235230', '89235240', '89235250', '89235260', '89235270',
-            '89235280', '89235290', '89235300', '89235310', '89235320',
-            '89235330', '89235340', '89235350', '89235360', '89235370',
-            '89235380', '89235390', '89235400', '89235410', '89235420',
-            '89235430', '89235440', '89235450', '89235460', '89235470',
-            '89235480', '89235490', '89235500', '89235510', '89235520',
-            '89235530', '89235540', '89235550', '89235560', '89235570',
-            '89235580', '89235590', '89235600', '89235610', '89235620',
-            '89235630', '89235640', '89235650', '89235660', '89235670',
-            '89235680', '89235690', '89235700', '89235710', '89235720',
-            '89235730', '89235740', '89235750', '89235760', '89235770',
-            '89235780', '89235790', '89235800', '89235810', '89235820',
-            '89235830', '89235840', '89235850', '89235860', '89235870',
-            '89235880', '89235890', '89235900', '89235910', '89235920',
-            '89235930', '89235940', '89235950', '89235960', '89235970',
-            '89235980', '89235990',
-
-            // Floresta - Joinville
-            '89210240', '89211000', '89211010', '89211020', '89211030', 
-            '89211040', '89211050', '89211060', '89211070', '89211080', 
-            '89211090', '89211100', '89211110', '89211120', '89211130', 
-            '89211140', '89211150', '89211160', '89211170', '89211180', 
-            '89211190', '89211200', '89211210', '89211220', '89211230', 
-            '89211240', '89211250', '89211260', '89211270', '89211280', 
-            '89211290', '89211300', '89211310', '89211320', '89211330', 
-            '89211340', '89211350', '89211360', '89211370', '89211380', 
-            '89211390', '89211400', '89211410', '89211420', '89211430', 
-            '89211440', '89211450', '89211460', '89211470', '89211480', 
-            '89211490', '89211500', '89211510', '89211520', '89211530', 
-            '89211540', '89211550', '89211560', '89211570', '89211580', 
-            '89211590', '89211600', '89211610', '89211620', '89211630', 
-            '89211640', '89211650', '89211660', '89211670', '89211680', 
-            '89211690',
-
-            // Araquari
-            '89252000', '89252100', '89252200', '89252300', '89252400',
-            '89252500', '89252600'
-        ];
-
-        // Verifica se o CEP está na lista de CEPs atendidos (removendo o traço do CEP)
-        return cepsAtendidos.includes(cep.replace('-', '')); // Removendo o traço do CEP
-    }
-
-
-
-        document.getElementById('finalizarPedidoBtn').addEventListener('click', function() {
-            var nome = document.querySelector('input[name="nome"]').value;
-            var telefone = document.querySelector('input[name="telefone"]').value;
-            var cep = document.getElementById('cep').value;
-            var endereco = document.querySelector('input[name="endereco"]').value;
-            var bairro = document.querySelector('input[name="bairro"]').value;
-            var referencia = document.querySelector('input[name="referencia"]').value;
-            var cidade = document.querySelector('input[name="cidade"]').value;
-            var pagamento = document.getElementById('forma-pagamento').value;
-
-            // Validando se todos os campos necessários estão preenchidos
-            if (!endereco || !bairro || !referencia || !cidade || !pagamento) {
-                alert('Por favor, preencha todos os campos obrigatórios antes de finalizar o pedido.');
-                return;
-            }
-
-            var total = document.getElementById('cart-total').textContent;
-            
-            // Construir a URL do WhatsApp com os dados
-            var whatsappMessage = `
-                Nome: ${nome}\n
-                Telefone: ${telefone}\n
-                Endereço: ${endereco}, ${bairro}, ${referencia}, ${cidade}\n
-                CEP: ${cep}\n
-                Forma de Pagamento: ${pagamento}\n
-                Total: ${total}
-            `;
-            
-            var whatsappUrl = `https://wa.me/5547991597258?text=${encodeURIComponent(whatsappMessage)}`;
-            
-            // Atualiza o href do link com a URL de WhatsApp
-            document.getElementById('finalizarPedidoBtn').href = whatsappUrl;
-        });
-    </script>
-
-
+   
 </html>
